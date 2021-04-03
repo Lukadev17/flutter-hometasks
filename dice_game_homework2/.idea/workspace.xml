@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e850937d-05fd-424a-ad69-5cda37b52ea9" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1qfOn91nCv9wwGtxHIhUtjaU5qQ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="dart.analysis.tool.window.force.activate" value="false" />
+  </component>
+  <component name="RunManager" selected="Dart Command Line App.dice_game.dart">
+    <configuration name="dice_game.dart" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/lib/dice_game.dart" />
+      <option name="workingDirectory" value="$PROJECT_DIR$/lib" />
+      <method v="2" />
+    </configuration>
+    <configuration name="excercise_1.dart" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/lib/excercise_1.dart" />
+      <option name="workingDirectory" value="$PROJECT_DIR$/lib" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Dart Command Line App.dice_game.dart" />
+        <item itemvalue="Dart Command Line App.excercise_1.dart" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e850937d-05fd-424a-ad69-5cda37b52ea9" name="Default Changelist" comment="" />
+      <created>1617467341096</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617467341096</updated>
+      <workItem from="1617467346330" duration="5967000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1323" height="111" key="GridCell.Tab.0.bottom" timestamp="1617473601747">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="111" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1617473601747" />
+    <state width="1323" height="111" key="GridCell.Tab.0.center" timestamp="1617473601747">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="111" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1617473601747" />
+    <state width="1323" height="111" key="GridCell.Tab.0.left" timestamp="1617473601747">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="111" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1617473601747" />
+    <state width="1323" height="111" key="GridCell.Tab.0.right" timestamp="1617473601747">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="111" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1617473601747" />
+  </component>
+</project>
