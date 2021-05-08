@@ -3,15 +3,14 @@ import 'package:flutter_movies_app/data/models/movie_model.dart';
 import 'package:flutter_movies_app/data/repository/movie_helper.dart';
 import 'package:provider/provider.dart';
 
-
 class EditMovieScreen extends StatefulWidget {
   static const routeName = "/edit-movie-screen";
+
   @override
   _EditMovieScreenState createState() => _EditMovieScreenState();
 }
 
 class _EditMovieScreenState extends State<EditMovieScreen> {
-
   final _formKey = GlobalKey<FormState>();
 
   TextEditingController movieID;
@@ -31,7 +30,8 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
     movieName = TextEditingController(text: movie.name);
     movieDescription = TextEditingController(text: movie.description);
     movieCategory = TextEditingController(text: movie.category);
-    movieReleaseDate = TextEditingController(text: movie.releaseDate.toString());
+    movieReleaseDate =
+        TextEditingController(text: movie.releaseDate.toString());
     movieRating = TextEditingController(text: movie.rating.toString());
     movieUrl = TextEditingController(text: movie.imageUrl);
     return Scaffold(
@@ -84,7 +84,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                   child: TextFormField(
                     controller: movieDescription,
                     decoration:
-                    InputDecoration(hintText: "Please enter description"),
+                        InputDecoration(hintText: "Please enter description"),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return "Please enter valid description";
@@ -97,7 +97,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                   child: TextFormField(
                     controller: movieRating,
                     decoration:
-                    InputDecoration(hintText: "Please enter rating"),
+                        InputDecoration(hintText: "Please enter rating"),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return "Please enter valid rating";
@@ -110,7 +110,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                   child: TextFormField(
                     controller: movieReleaseDate,
                     decoration:
-                    InputDecoration(hintText: "Please enter release date"),
+                        InputDecoration(hintText: "Please enter release date"),
                     keyboardType: TextInputType.number,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -124,7 +124,7 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                   child: TextFormField(
                     controller: movieCategory,
                     decoration:
-                    InputDecoration(hintText: "Please enter category"),
+                        InputDecoration(hintText: "Please enter category"),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return "Please enter valid category";
@@ -155,8 +155,8 @@ class _EditMovieScreenState extends State<EditMovieScreen> {
                             rating: double.parse(movieRating.text),
                             category: movieCategory.text,
                           );
-                          Provider.of<MovieRepository>(context, listen: false).editMovie(movie);
-                          //MovieRepository().editMovie(movie, index);
+                          Provider.of<MovieRepository>(context, listen: false)
+                              .editMovie(movie);
                           Navigator.pop(context);
                         }
                       },

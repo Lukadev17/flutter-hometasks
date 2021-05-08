@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_movies_app/data/models/movie_model.dart';
 import 'package:flutter_movies_app/data/repository/movie_helper.dart';
 import 'package:flutter_movies_app/widgets/main_list_item.dart';
 import 'package:provider/provider.dart';
@@ -20,7 +19,6 @@ class HomeScreen extends StatelessWidget {
   //       .toList();
   // }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,14 +33,16 @@ class HomeScreen extends StatelessWidget {
               ),
               TextButton(
                 onPressed: () {
-                  Provider.of<MovieRepository>(context, listen: false).getRecentlyAdded();
+                  Provider.of<MovieRepository>(context, listen: false)
+                      .getRecentlyAdded();
                 },
                 child: Text("Recently Added"),
               ),
               Divider(),
               TextButton(
                 onPressed: () {
-                  Provider.of<MovieRepository>(context, listen: false).getMyFavorites();
+                  Provider.of<MovieRepository>(context, listen: false)
+                      .getMyFavorites();
                 },
                 child: Text("My Favorites"),
               ),
@@ -60,12 +60,14 @@ class HomeScreen extends StatelessWidget {
       body: Container(
         child: Consumer<MovieRepository>(
           builder: (BuildContext context, movies, Widget child) {
-            var movieList = movies.moviesList;
+            var movieList = movies.movieList;
             if (movies.recently == true) {
-              movieList = movieList.where((element) => element.category == "RecentlyAdded")
+              movieList = movieList
+                  .where((element) => element.category == "RecentlyAdded")
                   .toList();
             } else if (movies.favorites == true) {
-              movieList = movieList.where((element) => element.category == "MyFavorites")
+              movieList = movieList
+                  .where((element) => element.category == "MyFavorites")
                   .toList();
             }
             return ListView.builder(
@@ -82,8 +84,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(
-                          context, MovieDetailsScreen.routeName,
+                      Navigator.pushNamed(context, MovieDetailsScreen.routeName,
                           arguments: movie);
                     },
                     onLongPress: () {
@@ -105,20 +106,21 @@ class HomeScreen extends StatelessWidget {
                   confirmDismiss: (direction) => showDialog(
                       context: context,
                       builder: (_) => AlertDialog(
-                        title: Text("Are you sure?"),
-                        content: Text("Do you really want to delete this movie?"),
-                        actions: [
-                          TextButton(
-                              onPressed: () => Navigator.pop(context),
-                              child: Text("NO")),
-                          TextButton(
-                              onPressed: () {
-                                movies.removeMovie(movie.id);
-                                Navigator.pop(context);
-                              },
-                              child: Text("YES")),
-                        ],
-                      )),
+                            title: Text("Are you sure?"),
+                            content: Text(
+                                "Do you really want to delete this movie?"),
+                            actions: [
+                              TextButton(
+                                  onPressed: () => Navigator.pop(context),
+                                  child: Text("No")),
+                              TextButton(
+                                  onPressed: () {
+                                    movies.removeMovie(movie.id);
+                                    Navigator.pop(context);
+                                  },
+                                  child: Text("Yes")),
+                            ],
+                          )),
                 );
               },
               itemCount: movieList.length,

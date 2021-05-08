@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_movies_app/data/models/dummy_data.dart';
 import 'package:flutter_movies_app/data/models/movie_model.dart';
 
 class MovieRepository extends ChangeNotifier{
-  bool recently, favorites = false;
-  List<Movie> moviesList = [];
+  bool recently = false;
+  bool favorites = false;
+  List<Movie> movieList = [];
 
   void addMovie(Movie movie){
-    moviesList.add(movie);
+    movieList.add(movie);
     notifyListeners();
   }
 
   void removeMovie(int id){
-    DUMMY_DATA.removeWhere((element) => element.id == id);
+    movieList.removeWhere((element) => element.id == id);
     notifyListeners();
   }
 
   void editMovie(Movie movie) {
-    for (var i = 0; i < moviesList.length; i++) {
-      if (moviesList[i].id == movie.id) {
-        moviesList.replaceRange(i, i + 1, [movie]);
+    for (int i = 0; i < movieList.length; i++) {
+      if (movieList[i].id == movie.id) {
+        movieList.replaceRange(i, i + 1, [movie]);
         break;
       }
     }
@@ -33,15 +33,14 @@ class MovieRepository extends ChangeNotifier{
   }
 
   void getMyFavorites() {
-    recently = false;
     favorites = true;
+    recently = false;
     notifyListeners();
   }
 
   void reset() {
-    recently = false;
     favorites = false;
+    recently = false;
     notifyListeners();
   }
-
 }

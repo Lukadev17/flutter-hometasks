@@ -3,7 +3,6 @@ import 'package:flutter_movies_app/data/models/movie_model.dart';
 import 'package:flutter_movies_app/data/repository/movie_helper.dart';
 import 'package:provider/provider.dart';
 
-
 class AddNewMovieScreen extends StatelessWidget {
   static const routeName = "/add-new-movie";
 
@@ -69,7 +68,7 @@ class AddNewMovieScreen extends StatelessWidget {
                   child: TextFormField(
                     controller: movieDescription,
                     decoration:
-                    InputDecoration(hintText: "Please enter description"),
+                        InputDecoration(hintText: "Please enter description"),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return "Please enter valid description";
@@ -82,7 +81,7 @@ class AddNewMovieScreen extends StatelessWidget {
                   child: TextFormField(
                     controller: movieRating,
                     decoration:
-                    InputDecoration(hintText: "Please enter rating"),
+                        InputDecoration(hintText: "Please enter rating"),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return "Please enter valid rating";
@@ -95,7 +94,7 @@ class AddNewMovieScreen extends StatelessWidget {
                   child: TextFormField(
                     controller: movieReleaseDate,
                     decoration:
-                    InputDecoration(hintText: "Please enter release date"),
+                        InputDecoration(hintText: "Please enter release date"),
                     keyboardType: TextInputType.number,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -109,7 +108,7 @@ class AddNewMovieScreen extends StatelessWidget {
                   child: TextFormField(
                     controller: movieCategory,
                     decoration:
-                    InputDecoration(hintText: "Please enter category"),
+                        InputDecoration(hintText: "Please enter category"),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return "Please enter valid category";
@@ -130,8 +129,9 @@ class AddNewMovieScreen extends StatelessWidget {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        if(_formKey.currentState.validate()){
-                          Movie movie = Movie(id: int.parse(movieID.text),
+                        if (_formKey.currentState.validate()) {
+                          Movie movie = Movie(
+                            id: int.parse(movieID.text),
                             name: movieName.text,
                             imageUrl: movieUrl.text,
                             description: movieDescription.text,
@@ -139,8 +139,8 @@ class AddNewMovieScreen extends StatelessWidget {
                             rating: double.parse(movieRating.text),
                             category: movieCategory.text,
                           );
-                          Provider.of<MovieRepository>(context, listen: false).addMovie(movie);
-                          //MovieRepository().addMovie(movie);
+                          Provider.of<MovieRepository>(context, listen: false)
+                              .addMovie(movie);
                           Navigator.pop(context);
                         }
                       },
